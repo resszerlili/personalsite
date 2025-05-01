@@ -1,9 +1,8 @@
 .NonInvasiveAlert {
     position: absolute;
-    top: 50px;
     position: absolute;
     left: 40%;
     right: 40%;
-    top: 450px;
+    top: 25px;
 
 }
