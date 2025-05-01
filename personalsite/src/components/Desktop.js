@@ -5,7 +5,7 @@ import '../styles/NavBar.css'
 function Desktop() {
     return (
         <nav className="Desktop">
-            <img src="/images/logo.png" alt="My logo" className="logo"></img>
+            <img src="MyLogoBeta.png" alt="My logo" className="logo"></img>
             <NavLinks />
         </nav>
     );
