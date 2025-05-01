@@ -3,8 +3,13 @@ nav {
     align-items: center;
     justify-content: space-evenly;
     padding: 30px 50px 30px 50px;
-}
+    background-color: white;
+    width: 100vw;
 
+}
+ul {
+    background-color: white;
+}
 
 nav ul {
     display: flex;
@@ -22,6 +27,7 @@ nav ul li a {
 text-decoration: none;
 font-weight: bold;
 color: black;
+
 }
 
 nav ul li a:hover {
@@ -31,10 +37,13 @@ transition: .3s;
 
 .navlinks {
     height: 15vh;
+
 }
+
 
 .Mobile {
     display: none;
+    background-color: white;
 }
 
 @media (max-width: 768px)

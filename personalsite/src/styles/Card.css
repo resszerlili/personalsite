@@ -1,0 +1,15 @@
+.Card {
+    border: 2 px solid hsl(0,0%,80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsla(0,0%,0%,0.1);
+    padding: 40px;
+    margin: 20px;
+    text-align: center;
+    display: inline-block;
+    background-color: #e2e2e8;
+}
+
+.Card h1{
+    margin: 10px;
+    padding: 20px;
+}

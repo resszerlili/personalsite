@@ -5,7 +5,7 @@ import '../styles/NavBar.css'
 
 const NavBar = () => {
     return (
-        <div>
+        <div class="NavBar">
             <Desktop />
             <Mobile />
         </div>
