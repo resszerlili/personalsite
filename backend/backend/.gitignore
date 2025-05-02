@@ -1,2 +1,49 @@
+# Ignore node_modules, logs, and OS-generated files
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+
+# Ignore IDE/editor config
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore build artifacts
 bin/
 obj/
+build/
+dist/
+
+# Ignore compiled binaries and other outputs
+*.exe
+*.dll
+*.pdb
+*.class
+*.pyc
+*.o
+*.out
+*.a
+*.so
+
+# Ignore temporary files
+*.tmp
+*.bak
+*.swp
+*.~*
+
+# Ignore environment files
+.env
+.env.*
+
+# Ignore coverage and test output
+coverage/
+*.lcov
+test-results/
+
+# Ignore Git-repository-specific backups or patches
+*.orig
+*.rej
