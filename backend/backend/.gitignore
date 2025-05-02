@@ -47,3 +47,10 @@ test-results/
 # Ignore Git-repository-specific backups or patches
 *.orig
 *.rej
+
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
