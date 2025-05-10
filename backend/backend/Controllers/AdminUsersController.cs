@@ -9,18 +9,18 @@ namespace backend.Controllers
     public class AdminUsersController(DataContext context) : Controller
     {
         [HttpGet]
-        public ActionResult<IEnumerable<AdminUser>> GetAdminUsers()
+        public async Task<ActionResult<IEnumerable<AdminUser>>> GetAdminUsers()
         {
-            var adminUsers = context.AdminUsers.ToList();
+            var adminUsers = await context.AdminUsers.ToListAsync();
 
             return Ok(adminUsers);
         }
 
         [HttpGet("{id:int}")]
 
-        public ActionResult<AdminUser> GetAdminUser(int id)
+        public async Task<ActionResult<AdminUser>> GetAdminUser(int id)
         {
-            var adminUser = context.AdminUsers.Find(id);
+            var adminUser = await context.AdminUsers.FindAsync(id);
 
             return Ok(adminUser);
         }
