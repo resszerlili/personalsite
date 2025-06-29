@@ -11,7 +11,7 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent implements OnInit {
   
   http = inject(HttpClient);
-  title = 'Máté Resszer';
+  title = 'Lili Resszer';
   users: any;
 
   // TODO: REMOVE HARDCODES INTO CONFIG

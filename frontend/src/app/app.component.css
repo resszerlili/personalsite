@@ -1,0 +1,11 @@
+#add {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+#buttons {
+    display: grid;
+    column-gap: 10px;
+    width: 50px;
+} 
