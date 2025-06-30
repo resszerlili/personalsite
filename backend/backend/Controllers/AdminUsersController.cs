@@ -30,7 +30,8 @@ namespace backend.Controllers
             return Ok(adminUser);
         }
 
-        public async Task<ActionResult<AdminUserDTO>> AddAdminUser(AdminUserDTO user)
+        [HttpPost]
+        public async Task<ActionResult<AdminUserDTO>> AddAdminUser([FromBody]AdminUserDTO user)
         {
             var hasher = new PasswordHasher<AdminUserDTO>();
             string hashedPassword = hasher.HashPassword(user, user.Password);
@@ -52,8 +53,35 @@ namespace backend.Controllers
                 new { id = newUser.Id }
             );
 
+        }
 
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult<AdminUser>> EditAdminUser(int id, [FromBody]AdminUserDTO newUser)
+        {
+            var adminUser = await context.AdminUsers.FindAsync(id);
+            if (adminUser == null) return NotFound();
 
+            adminUser.UserName = newUser.UserName;
+            adminUser.Email = newUser.Email;
+            adminUser.Created = newUser.Created;
+            adminUser.LastLogin = newUser.LastLogin;
+            adminUser.IsOwner = newUser.IsOwner;
+            context.AdminUsers.Update(adminUser);
+
+            await context.SaveChangesAsync();
+
+            return Ok(adminUser);
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult<AdminUser>> DeleteAdminUser(int id)
+        {
+            var adminUser = await context.AdminUsers.FindAsync(id);
+            if (adminUser == null) return NotFound();
+            context.AdminUsers.Remove(adminUser);
+            await context.SaveChangesAsync();
+
+            return Ok(adminUser);
         }
     }
 }
