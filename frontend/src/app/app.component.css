@@ -1,11 +1,7 @@
-#add {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 30px;
-}
+.adminpanel {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10rem;
 
-#buttons {
-    display: grid;
-    column-gap: 10px;
-    width: 50px;
-} 
+}
