@@ -1,5 +1,4 @@
-﻿using System.Data.Entity;
-using System.Security.Cryptography;
+﻿
 using backend.Data;
 using backend.Entities;
 using Microsoft.AspNetCore.Identity;
@@ -21,9 +20,9 @@ namespace backend.Controllers
             return Ok(adminUsers);
         }
 
-        [HttpGet("{id:int}")]
+        [HttpGet("{id:guid}")]
 
-        public async Task<ActionResult<AdminUser>> GetAdminUser(int id)
+        public async Task<ActionResult<AdminUser>> GetAdminUser(Guid id)
         {
             var adminUser = await context.AdminUsers.FindAsync(id);
 
@@ -31,8 +30,10 @@ namespace backend.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<AdminUserDTO>> AddAdminUser([FromBody]AdminUserDTO user)
+        public async Task<ActionResult<AdminUserDTO>> AddAdminUser([FromBody] AdminUserDTO user)
         {
+            if (user == null) return BadRequest("User data is null");
+            if (await AdminUserExists(user.UserName)) return Conflict("User with this ID already exists");
             var hasher = new PasswordHasher<AdminUserDTO>();
             string hashedPassword = hasher.HashPassword(user, user.Password);
             var newUser = new AdminUser
@@ -49,14 +50,14 @@ namespace backend.Controllers
             await context.SaveChangesAsync();
 
             return CreatedAtAction(
-                nameof(GetAdminUser),
+                nameof(AddAdminUser),
                 new { id = newUser.Id }
             );
 
         }
 
-        [HttpPut("{id:int}")]
-        public async Task<ActionResult<AdminUser>> EditAdminUser(int id, [FromBody]AdminUserDTO newUser)
+        [HttpPut("{id:guid}")]
+        public async Task<ActionResult<AdminUser>> EditAdminUser(Guid id, [FromBody] AdminUserDTO newUser)
         {
             var adminUser = await context.AdminUsers.FindAsync(id);
             if (adminUser == null) return NotFound();
@@ -73,8 +74,8 @@ namespace backend.Controllers
             return Ok(adminUser);
         }
 
-        [HttpDelete("{id:int}")]
-        public async Task<ActionResult<AdminUser>> DeleteAdminUser(int id)
+        [HttpDelete("{id:guid}")]
+        public async Task<ActionResult<AdminUser>> DeleteAdminUser(Guid id)
         {
             var adminUser = await context.AdminUsers.FindAsync(id);
             if (adminUser == null) return NotFound();
@@ -82,6 +83,11 @@ namespace backend.Controllers
             await context.SaveChangesAsync();
 
             return Ok(adminUser);
+        }
+        
+        private async Task<bool> AdminUserExists(string username)
+        {
+            return await context.AdminUsers.AnyAsync(e => e.UserName == username);
         }
     }
 }

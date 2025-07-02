@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminsComponent } from './admins/admins.component';
-import { AdminsNavComponent } from './admins-nav/admins-nav.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 @Component({
   selector: 'app-root',
-  imports: [AdminsComponent,AdminsNavComponent],
+  imports: [AdminPanelComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

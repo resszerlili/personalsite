@@ -13,15 +13,17 @@
       </tr>
     </thead>
     <tbody>
-      <!-- row 1 -->
       <tr>
-        <th>1</th>
-        <td>Cy Ganderton</td>
-        <td>Quality Control Specialist</td>
-        <td>Blue</td>
+        @for (user of users; track user.id) 
+        {
+        <th>{{user.id}}</th>
+        <td>{{user.userName}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.created}}</td>
+        <td>{{user.lastLogin}}</td>
         <td><div id=buttons><button class="btn btn-primary">Edit</button>
         <button class="btn btn-error">Delete</button></div></td>
-
+        }
       </tr>
     </tbody>
   </table>
