@@ -56,6 +56,20 @@ namespace backend.Controllers
 
         }
 
+        [HttpPost]
+        public async Task<ActionResult<AdminUser>> LoginAdminUser([FromBody] LoginDTO login)
+        {
+            if (login == null) return BadRequest("Empty login data");
+            var adminUser = await context.AdminUsers.FirstOrDefaultAsync(u => u.UserName == login.UserName);
+            if (adminUser == null) return Unauthorized("Invalid username/password");
+            var hasher = new PasswordHasher<AdminUser>();   
+            PasswordVerificationResult result = hasher.VerifyHashedPassword(adminUser, adminUser.PasswordHash, login.Password);
+            
+            if (result == PasswordVerificationResult.Failed) return Unauthorized("Invalid username/password");
+            else return Ok("Success");
+
+        }
+
         [HttpPut("{id:guid}")]
         public async Task<ActionResult<AdminUser>> EditAdminUser(Guid id, [FromBody] AdminUserDTO newUser)
         {
