@@ -1,4 +1,6 @@
 using backend.Data;
+using backend.Interfaces;
+using backend.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -26,6 +28,7 @@ builder.Services.AddSwaggerGen(
     }
     );
 builder.Services.AddCors();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 var app = builder.Build();
 
