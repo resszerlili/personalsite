@@ -1,6 +1,9 @@
 ﻿
 using backend.Data;
 using backend.Entities;
+using backend.Interfaces;
+using backend.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -8,9 +11,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace backend.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("admin/[controller]")] // /admin/adminusers
-    public class AdminUsersController(DataContext context) : Controller
+    public class AdminUsersController(DataContext context, ITokenService tokenService) : Controller
     {
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AdminUser>>> GetAdminUsers()
@@ -56,7 +60,8 @@ namespace backend.Controllers
 
         }
 
-        [HttpPost]
+        [AllowAnonymous]
+        [HttpPost("login")]
         public async Task<ActionResult<AdminUser>> LoginAdminUser([FromBody] LoginDTO login)
         {
             if (login == null) return BadRequest("Empty login data");
@@ -66,7 +71,7 @@ namespace backend.Controllers
             PasswordVerificationResult result = hasher.VerifyHashedPassword(adminUser, adminUser.PasswordHash, login.Password);
             
             if (result == PasswordVerificationResult.Failed) return Unauthorized("Invalid username/password");
-            else return Ok("Success");
+            else return Ok(tokenService.CreateToken(adminUser));
 
         }
 
