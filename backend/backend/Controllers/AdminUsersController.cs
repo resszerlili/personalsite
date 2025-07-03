@@ -71,7 +71,7 @@ namespace backend.Controllers
             PasswordVerificationResult result = hasher.VerifyHashedPassword(adminUser, adminUser.PasswordHash, login.Password);
             
             if (result == PasswordVerificationResult.Failed) return Unauthorized("Invalid username/password");
-            else return Ok(tokenService.CreateToken(adminUser));
+            else return Ok($"Bearer {tokenService.CreateToken(adminUser)}");
 
         }
 

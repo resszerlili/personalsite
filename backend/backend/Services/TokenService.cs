@@ -15,7 +15,7 @@ public class TokenService(IConfiguration config) : ITokenService
         string secretKey = config["Jwt:Secret"]!;
         var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
 
-        var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha512);
+        var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
 
         var claims = new List<Claim>
