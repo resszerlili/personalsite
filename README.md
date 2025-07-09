@@ -20,12 +20,12 @@ This repo includes the source code for my personal portfolio project, using Angu
 - Node.js
 - Angular
 
-### Running the project
+## Running the project
 
 #### Frontend:
--cd into frontend
--ng serve
+- cd into frontend
+- ng serve
 
 #### Backend:
--cd into backend/backend
--dotnet run
+- cd into backend/backend
+- dotnet run
