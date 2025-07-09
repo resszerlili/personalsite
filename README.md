@@ -2,7 +2,7 @@
 
 ## Description
 
-This repo includes the source code for my personal portfolio project, using React, ASP.NET and Postgres.
+This repo includes the source code for my personal portfolio project, using Angular, ASP.NET and Postgres.
 
 ## Features
 
@@ -18,8 +18,14 @@ This repo includes the source code for my personal portfolio project, using Reac
 - .NET SDK
 - PostgreSQL
 - Node.js
-- React
+- Angular
 
-TODO
-## Technologies
-TODO
+### Running the project
+
+#### Frontend:
+-cd into frontend
+-ng serve
+
+#### Backend:
+-cd into backend/backend
+-dotnet run
