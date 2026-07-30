@@ -1,7 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
+import Layout from "../layouts/layout.astro";
 ---
 
 <Layout>
-	
+    <main class="text-center flex flex-col justify-center items-center gap-2">
+        <h1 class="text-4xl font-bold">Lili Resszer</h1>
+        <p class="mt-2 text-lg">Software developer & artist  </p>
+        <p class="mt-2 text-lg flex flex-col justify-center gap-2 animate-fade-in   ">
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Fullstack</span>
+            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full">Backend</span>
+            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">DevOps</span>
+        </p>
+
+    </main>
 </Layout>
