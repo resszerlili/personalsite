@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap');
+@import 'tailwindcss';
+
+
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --animate-wiggle: wiggle 2s ease-in-out infinite;
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+  }
+}
+
+@theme{
+    --font-bitcount: "Bitcount Grid Single", monospace;
+}

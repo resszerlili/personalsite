@@ -1,0 +1,40 @@
+---
+import '../styles/global.css'
+---
+
+<!doctype html>
+<html lang="en" class="">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Lili Resszer</title>
+       
+    </head>
+<body class="dark:bg-gray-950 dark:text-white flex items-center justify-center min-h-screen">
+        
+    <div class="gap-8 flex flex-col items-center text-center">    
+    <section class="max-w-lg bg-center flex justify-self-center h-80 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+        
+        <div class="bg-linear-to-b dark:from-gray-950 rounded-lg md:p-8 border-2 border-gray-900 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50 shadow-2xl shadow-gray-900/20 dark:shadow-black/20">
+            <div class="py-8 px-8 mx-auto text-center">
+        
+            <h1 class="mb-6 text-4xl font-bold tracking-tighter text-heading md:text-5xl lg:text-6xl">Hi! I'm Lily.</h1>
+            <p class="mb-8 text-base font-normal text-body md:text-xl">Insert epic description here.</p>
+
+        </div>
+        </div>
+    </section>
+    
+    <section class=" max-w-lg bg-center flex justify-self-center h-80 min-w-lg bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+        
+        <div class="bg-linear-to-b dark:from-gray-950 rounded-lg min-w-lg border-2 border-gray-900 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50 shadow-2xl shadow-gray-900/20 dark:shadow-black/20">
+            <p class="text-lg dark:text-green text-green-500 animate-wiggle  font-bitcount">Select...</p>
+            <slot />
+
+        </div>
+    </section>
+</div>
+
+    </body>
+</html>

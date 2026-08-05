@@ -1,31 +1,16 @@
-# My personal website
+# Lily's website
 
-## Description
+## 🧞 Commands
 
-This repo includes the source code for my personal portfolio project, using Angular, ASP.NET and Postgres.
+All commands are run from the root of the project, from a terminal:
 
-## Features
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-- **Responsive design**: The website is designed to be responsive and work on all devices, with a mobile first philosophy.
-- **Project showcase**: Ability to add more projects and manage them.
-- **Contact form**: A contact form that sends an email to a designated email address.
-- **Blog section**: Ability to add/remove/manage blog posts dynamically
 
-## Installation
-
-### Prerequisites
-
-- .NET SDK
-- PostgreSQL
-- Node.js
-- Angular
-
-## Running the project
-
-#### Frontend:
-- cd into frontend
-- ng serve
-
-#### Backend:
-- cd into backend/backend
-- dotnet run
