@@ -1,0 +1,3 @@
+.wavy {
+  clip-path: shape(from 0 0,vline to calc(100% - 30px),curve to 25% calc(100% - 37.5px) with 16.67% calc(100% - 16px),smooth to 41.67% calc(100% - 48.5px),smooth to 58.33% calc(100% - 37.5px),smooth to 75% calc(100% - 48px),smooth to 100% calc(100% - 30px),vline to 0, hline to 0);
+}

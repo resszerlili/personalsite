@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import '../styles/bottom.css'
 ---
 
 <!doctype html>
@@ -8,33 +9,30 @@ import '../styles/global.css'
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>Lili Resszer</title>
+        <script src="https://kit.fontawesome.com/2573478366.js" crossorigin="anonymous"></script>
+        <title>Lily</title>
        
     </head>
-<body class="dark:bg-gray-950 dark:text-white flex items-center justify-center min-h-screen">
-        
-    <div class="gap-8 flex flex-col items-center text-center">    
-    <section class="max-w-lg bg-center flex justify-self-center h-80 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
-        
-        <div class="bg-linear-to-b dark:from-gray-950 rounded-lg md:p-8 border-2 border-gray-900 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50 shadow-2xl shadow-gray-900/20 dark:shadow-black/20">
-            <div class="py-8 px-8 mx-auto text-center">
-        
-            <h1 class="mb-6 text-4xl font-bold tracking-tighter text-heading md:text-5xl lg:text-6xl">Hi! I'm Lily.</h1>
-            <p class="mb-8 text-base font-normal text-body md:text-xl">Insert epic description here.</p>
-
+<body >
+    <div class="bg-dark-amethyst items-center flex flex-col min-h-screen font-family-roboto ">
+        <div class=" bg-lime-green flex flex-1 min-w-screen max-h-80 min-h-60 wavy">
+            <div class="wavy bg-muted-teal flex flex-1 min-w-screen max-h-35"></div>
+            <p class="font-family-roboto h-10 absolute top-5 left-12 text-2xl text-dusk-blue">Lily beach</p>
         </div>
-        </div>
-    </section>
-    
-    <section class=" max-w-lg bg-center flex justify-self-center h-80 min-w-lg bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
-        
-        <div class="bg-linear-to-b dark:from-gray-950 rounded-lg min-w-lg border-2 border-gray-900 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50 shadow-2xl shadow-gray-900/20 dark:shadow-black/20">
-            <p class="text-lg dark:text-green text-green-500 animate-wiggle  font-bitcount">Select...</p>
-            <slot />
+   
+    <div class="flex flex-1 items-center justify-center gap-36 relative">
+        <nav aria-label="Menu" class="bg-muted-teal rounded-4xl m-4 min-w-10 max-w-md h-15 shadow-2xl border-10 border-lime-green flex flex-row items-center justify-center">
+            <a class="m-6 text-deep-space-blue font-family-roboto text-1xl" href="/">about</a>
+            <a class="m-6 text-deep-space-blue font-family-roboto text-1xl" href="/posts">posts</a>
+        </nav>
+        <img src="path.png" alt="" class="h-25 w-45 absolute left-53 ">
+        <slot>
+        </slot>
+    </div>
 
-        </div>
-    </section>
-</div>
 
+    </div>
+     
+  
     </body>
 </html>

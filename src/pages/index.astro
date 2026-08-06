@@ -1,9 +1,20 @@
 ---
 import "../styles/global.css";
-import Layout from "../layouts/layout.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
+    <div class="bg-muted-teal min-h-64 rounded-4xl m-4 min-w-10 max-w-md shadow-2xl border-15 border-lime-green flex flex-col items-center justify-center">
+        <div class="flex flex-col text-deep-space-blue text-center text-2xl p-6">
+            <h1>Hi, I am Lily!</h1>
+            <p>Software Engineer</p>
+            <p>Full Stack Developer <span class="animate-pulse">(currently)</span></p>
+        </div>
 
-    
+        <div class="flex items-center justify-center mt-4 gap-10">
+            <i class="fab fa-github text-lime-green text-4xl"></i>
+            <i class="fab fa-linkedin text-lime-green text-4xl"></i>
+            <i class="fas fa-envelope text-lime-green text-4xl"></i>
+        </div>
+    </div>
 </Layout>
