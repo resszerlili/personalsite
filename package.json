@@ -1,5 +1,8 @@
 {
-  "name": "src",
+  "author": "Lily Resszer",
+  "icon": "public/favicon.ico",
+  "repository": "https://github.com/resszerlili/personalsite",
+  "name": "personalsite",
   "type": "module",
   "version": "0.0.1",
   "engines": {
