@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css'
 import '../styles/bottom.css'
+import NavigationAstroComponent from '../components/navigation.astro'
+
 ---
 
 <!doctype html>
@@ -21,10 +23,7 @@ import '../styles/bottom.css'
         </div>
    
     <div class="flex flex-1 items-center justify-center gap-36 relative">
-        <nav aria-label="Menu" class="bg-muted-teal rounded-4xl m-4 min-w-10 max-w-md h-15 shadow-2xl border-10 border-lime-green flex flex-row items-center justify-center">
-            <a class="m-6 text-deep-space-blue font-family-roboto text-1xl" href="/">about</a>
-            <a class="m-6 text-deep-space-blue font-family-roboto text-1xl" href="/posts">posts</a>
-        </nav>
+        <NavigationAstroComponent></NavigationAstroComponent>
         <img src="path.png" alt="" class="h-25 w-45 absolute left-53 ">
         <slot>
         </slot>

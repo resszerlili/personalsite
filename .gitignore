@@ -25,3 +25,5 @@ pnpm-debug.log*
 .vercel
 
 colorpalette.png
+# Local Netlify folder
+.netlify

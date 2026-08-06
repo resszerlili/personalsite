@@ -3,6 +3,6 @@ import { getViteConfig } from 'astro/config';
 
 export default getViteConfig({
   test: {
-    exclude: ['dist']
+    exclude: ['dist','node_modules']
   },
 });
