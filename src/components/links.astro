@@ -1,23 +1,6 @@
 ---
 import {LINKEDIN, GITHUB} from '../constants/links'
----
-
-<header class="relative">
-        <div id="clipboard-alert" class="bg-muted-teal rounded-4xl min-w-36 h-8 shadow-2xl border-lime-green align-center border z-50 absolute top-24 hidden" role="alert">
-            <div class="ms-2 text-sm inline-block align-middle">
-                <p>Copied to clipboard!</p>
-            </div>
-        </div>
-    </header> 
- 
- <div class="flex items-center justify-center mt-4 gap-10">
-            <i aria-label={GITHUB} class="fab fa-github text-lime-green text-4xl linkopener hover:bg-dusk-blue"></i>
-            <i aria-label={LINKEDIN} class="fab fa-linkedin text-lime-green text-4xl linkopener hover:bg-dusk-blue"></i>
-            <i id="email" class="fas fa-envelope text-lime-green text-4xl hover:bg-dusk-blue"></i>
-</div>
-
-<script>
-    import { EMAIL } from "../constants/links";
+ import { EMAIL } from "../constants/links";
     const clipboardAlert = document.getElementById('clipboard-alert');
 
     const emailButton = document.getElementById('email');
@@ -38,5 +21,18 @@ import {LINKEDIN, GITHUB} from '../constants/links'
             }
         })
     }
+---
 
-</script>
+<header class="relative">
+        <div id="clipboard-alert" class="bg-muted-teal rounded-4xl min-w-36 h-8 shadow-2xl border-lime-green align-center border z-50 absolute top-24 hidden" role="alert">
+            <div class="ms-2 text-sm inline-block align-middle">
+                <p>Copied to clipboard!</p>
+            </div>
+        </div>
+    </header> 
+ 
+ <div class="flex items-center justify-center mt-4 gap-10">
+            <i aria-label={GITHUB} class="fab fa-github text-lime-green text-4xl linkopener hover:bg-dusk-blue"></i>
+            <i aria-label={LINKEDIN} class="fab fa-linkedin text-lime-green text-4xl linkopener hover:bg-dusk-blue"></i>
+            <i id="email" class="fas fa-envelope text-lime-green text-4xl hover:bg-dusk-blue"></i>
+</div>
