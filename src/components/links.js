@@ -1,8 +1,9 @@
-import { EMAIL } from "../constants/links";
+import { EMAIL, GITHUB, LINKEDIN } from "../constants/links";
 
-const links = document.getElementById('links')
-
-links.addEventListener('click', async (event) => {
+document.addEventListener('click', async (event) => {
+    if (!event){
+        return
+    }
     if (event.target.ariaLabel === EMAIL){
         const clipboardAlert = document.getElementById('clipboard-alert')
         await navigator.clipboard.writeText("resszerlili@gmail.com")
@@ -11,7 +12,7 @@ links.addEventListener('click', async (event) => {
             clipboardAlert.style.display = "none"
             }, 2000)
     }
-    else {
+    else if(event.target.ariaLabel === GITHUB | event.target.ariaLabel === LINKEDIN) {
         open(event.target.ariaLabel)
     }
     });
