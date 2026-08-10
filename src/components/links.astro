@@ -17,11 +17,12 @@ import {LINKEDIN, GITHUB} from '../constants/links'
 </div>
 
 <script type="module">
+    import { EMAIL } from "../constants/links";
     const clipboardAlert = document.getElementById('clipboard-alert');
 
     const emailButton = document.getElementById('email');
     emailButton.addEventListener('click', () => {
-        navigator.clipboard.writeText('resszerlili@gmail.com')
+        navigator.clipboard.writeText(EMAIL)
         clipboardAlert.style.display = "block"
         setTimeout(() => {
             clipboardAlert.style.display = "none"
