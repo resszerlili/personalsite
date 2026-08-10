@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css'
 import '../styles/bottom.css'
+import { ClientRouter, fade } from 'astro:transitions'
 import NavigationAstroComponent from '../components/navigation.astro'
 
 ---
@@ -14,6 +15,7 @@ import NavigationAstroComponent from '../components/navigation.astro'
         <script src="https://kit.fontawesome.com/2573478366.js" crossorigin="anonymous"></script>
         <link rel="icon" href="favicon.ico">
         <title>Lily</title>
+        <ClientRouter />
        
     </head>
 <body >
@@ -24,7 +26,7 @@ import NavigationAstroComponent from '../components/navigation.astro'
         </div>
    
         <div class="flex flex-1 items-center justify-center gap-36 relative not-md:flex not-md:flex-col">
-            <NavigationAstroComponent></NavigationAstroComponent>
+            <NavigationAstroComponent transition:animate={fade()}></NavigationAstroComponent>
             <img src="/path.png" alt="" class="h-25 w-45 absolute left-53 hidden md:flex">
             <slot>
             </slot>

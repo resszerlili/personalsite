@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import Links from "../components/links.astro";
+import { fade } from "astro:transitions";
 ---
 
 
@@ -15,7 +16,7 @@ import Links from "../components/links.astro";
             <p>Full Stack Developer <span class="animate-pulse">(currently)</span></p>
         </div>
 
-        <Links></Links>
+        <Links transition:animate={fade()}></Links>
        
     </div>
 
