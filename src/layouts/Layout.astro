@@ -22,16 +22,14 @@ import NavigationAstroComponent from '../components/navigation.astro'
             <p class="font-family-roboto h-10 absolute top-5 left-12 text-2xl text-dusk-blue">Lily beach</p>
         </div>
    
-    <div class="flex flex-1 items-center justify-center gap-36 relative">
-        <NavigationAstroComponent></NavigationAstroComponent>
-        <img src="path.png" alt="" class="h-25 w-45 absolute left-53 ">
-        <slot>
-        </slot>
-    </div>
+        <div class="flex flex-1 items-center justify-center gap-36 relative not-md:flex not-md:flex-col">
+            <NavigationAstroComponent></NavigationAstroComponent>
+            <img src="path.png" alt="" class="h-25 w-45 absolute left-53 hidden md:flex">
+            <slot>
+            </slot>
+        </div>
 
 
     </div>
-     
-  
     </body>
 </html>
