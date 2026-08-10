@@ -18,17 +18,18 @@ import {LINKEDIN, GITHUB} from '../constants/links'
 
 <script>
     import { EMAIL } from "../constants/links";
-    const clipboardAlert = document.getElementById('clipboard-alert')?;
+    const clipboardAlert = document.getElementById('clipboard-alert');
 
-    const emailButton = document.getElementById('email')?;
-    emailButton.addEventListener('click', () => {
-        navigator.clipboard.writeText(EMAIL)
-        clipboardAlert.style.display = "block"
-        setTimeout(() => {
-            clipboardAlert.style.display = "none"
-        }, 2000)
-    })
-    
+    const emailButton = document.getElementById('email');
+    if (clipboardAlert && emailButton){
+        emailButton.addEventListener('click', () => {
+            navigator.clipboard.writeText(EMAIL)
+            clipboardAlert.style.display = "block"
+            setTimeout(() => {
+                clipboardAlert.style.display = "none"
+            }, 2000)
+        })
+    }
     const linkOpeners = document.getElementsByClassName('linkopener');
     for (const item of linkOpeners){
         item.addEventListener('click', () => {
