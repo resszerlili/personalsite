@@ -1,10 +1,11 @@
 import { EMAIL } from "../constants/links";
 
-document.addEventListener("DOMContentLoaded", () => {
-document.addEventListener('click', (event) => {
+const links = document.getElementById('links')
+
+links.addEventListener('click', async (event) => {
     if (event.target.ariaLabel === EMAIL){
         const clipboardAlert = document.getElementById('clipboard-alert')
-        navigator.clipboard.writeText("resszerlili@gmail.com")
+        await navigator.clipboard.writeText("resszerlili@gmail.com")
         clipboardAlert.style.display = "block"
         setTimeout(() => {
             clipboardAlert.style.display = "none"
@@ -14,4 +15,3 @@ document.addEventListener('click', (event) => {
         open(event.target.ariaLabel)
     }
     });
-})
