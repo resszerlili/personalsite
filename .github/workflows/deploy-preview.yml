@@ -2,16 +2,7 @@ on:
   workflow_dispatch
 
 jobs:
-  checkout:
-    name: Checkout
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        id: checkout
-        uses: actions/checkout@v4
-        
   deploy-preview:
-    needs: checkout
     name: Deploy preview site
     runs-on: ubuntu-latest
     environment:
