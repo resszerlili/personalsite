@@ -12,7 +12,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview --test",
-    "test": "vitest",
+    "test": "vitest --coverage",
     "prepare": "husky"
   },
   "dependencies": {
