@@ -1,10 +1,13 @@
+on:
+  workflow_dispatch
+
 jobs:
   deploy-preview:
     name: Deploy preview site
     runs-on: ubuntu-latest
     environment:
       name: netlify
-      url: ${{ vars.PREVIEW_URL }}
+      url: $secrets.PREVIEW_DEPLOY_URL
     steps:
       - name: Checkout
         id: checkout
@@ -14,7 +17,6 @@ jobs:
         id: deploy_preview
         uses: ./
         with:
-          auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          site: ${{ vars.NETLIFY_SITE_NAME }}
+          site: $vars.NETLIFY_SITE_NAME
           dir: sites/preview
           alias: preview
