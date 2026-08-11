@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4be54340-f0e0-4db5-b1be-c0a2c96976a7/deploy-status)](https://app.netlify.com/projects/lilysbeach/deploys)
+
 # Lily's website
 
 ## Description
@@ -34,4 +36,4 @@ This repository hosts my personal website, designed by me and coded 100% by hand
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4be54340-f0e0-4db5-b1be-c0a2c96976a7/deploy-status)](https://app.netlify.com/projects/lilysbeach/deploys)
+
