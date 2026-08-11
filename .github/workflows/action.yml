@@ -1,0 +1,18 @@
+on:
+  workflow_dispatch
+
+jobs:
+  deploy-preview:
+    name: Deploy preview site
+    runs-on: ubuntu-latest
+    environment:
+      name: netlify
+      url: $secrets.PREVIEW_DEPLOY_URL
+    steps:
+      - name: Deploy preview site
+        id: deploy_preview
+        uses: ./
+        with:
+          site: $vars.NETLIFY_SITE_NAME
+          dir: sites/preview
+          alias: preview
